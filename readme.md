@@ -1,4 +1,4 @@
-### [Business Times Zones](https://bcwalnja.github.io/business-time-zones).
+### [Business Times Zones](https://bcwalnja.github.io/business-time-zones)
 
 This is intended to be a widget to show businesses by US time zone on a map.
 
