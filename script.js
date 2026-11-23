@@ -1,5 +1,5 @@
 const storageKey = "time-zone-businesses";
-const sheetStorageKey = "sheetUrl";
+const sheetStorageKey = "business-time-zones-sheet-url";
 const zones = ["Pacific", "Mountain", "Central", "Eastern"];
 const timeZones = {
     Pacific: "America/Los_Angeles",
