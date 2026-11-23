@@ -1,5 +1,4 @@
 const storageKey = "time-zone-businesses";
-const defaultSheetUrl = "https://docs.google.com/spreadsheets/d/1L6n0XqlJyazhemrM69Z-_ovEINMa_fmQL0w1d5fzK4s/edit?usp=sharing";
 let businesses = JSON.parse(localStorage.getItem(storageKey) || "[]");
 let sheetBusinesses = [];
 const zones = ["Pacific", "Mountain", "Central", "Eastern"];
