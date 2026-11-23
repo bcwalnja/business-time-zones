@@ -53,18 +53,27 @@ function render() {
         const list = document.querySelector(`[data-zone="${business.zone}"]`);
         if (!list) return;
         const item = document.createElement("li");
-        const name = business.index === undefined ? document.createElement("span") : document.createElement("button");
-        name.textContent = business.index === undefined
-            ? business.name.replace(/\s+\([^)]*$/, "").trim()
-            : business.name;
         if (business.index === undefined) {
+            const name = document.createElement("span");
             name.className = "sheet-business";
+            name.textContent = business.name.replace(/\s+\([^)]*$/, "").trim();
+            item.append(name);
         } else {
-            name.type = "button";
-            name.setAttribute("aria-label", `Remove ${business.name}`);
-            name.dataset.index = business.index;
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.className = "remove-business";
+            removeButton.setAttribute("aria-label", `Remove ${business.name}`);
+            removeButton.title = `Remove ${business.name}`;
+            removeButton.dataset.index = business.index;
+            const name = document.createElement("span");
+            name.textContent = business.name;
+            const icon = document.createElement("span");
+            icon.className = "remove-icon";
+            icon.setAttribute("aria-hidden", "true");
+            icon.textContent = "×";
+            removeButton.append(name, icon);
+            item.append(removeButton);
         }
-        item.append(name);
         list.append(item);
         const column = list.closest(".column");
         if (list.children.length > 18) column.classList.add("tiny");
