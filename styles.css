@@ -1,0 +1,186 @@
+:root {
+    color-scheme: light dark;
+    --panel: #fff;
+    --map: gray;
+    --zone: #c0392b;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --panel: #222;
+        --map: #333;
+        --zone: #aa1111;
+    }
+
+    body {
+        background: #111;
+        font-family: sans-serif;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+.widget {
+    container-type: size;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#map>svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#map svg path {
+    vector-effect: non-scaling-stroke;
+}
+
+.column {
+    position: absolute;
+    max-height: 96%;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    font-size: clamp(9px, min(3.4cqw, 4cqh), 24px);
+    top: 10%;
+    line-height: 1.15;
+}
+
+.pacific {
+    left: 3%;
+    width: 20%;
+}
+
+.mountain {
+    left: 23.6%;
+    width: 15.4%;
+}
+
+.central {
+    left: 41.9%;
+    width: 24%;
+}
+
+.eastern {
+    left: 70.5%;
+    width: 28%;
+}
+
+.column.small {
+    font-size: clamp(8px, min(3cqw, 3.5cqh), 21px);
+}
+
+.column.smaller {
+    font-size: clamp(7px, min(2.6cqw, 3cqh), 18px);
+}
+
+.column.tiny {
+    font-size: clamp(6px, min(2cqw, 2.5cqh), 15px);
+}
+
+.column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.column li {
+    margin: .55em 0;
+}
+
+.column li button {
+    max-width: 100%;
+    padding: .05em .1em;
+    border: 0;
+    background: transparent;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.tools {
+    position: absolute;
+    z-index: 2;
+    top: 1cqh;
+    right: 1cqw;
+    display: flex;
+}
+
+.tools button {
+    padding: .15em .4em;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: clamp(12px, min(2cqw, 2.5cqh), 18px);
+    cursor: pointer;
+}
+
+.tools #toggle-sheet.connected {
+    color: #7fb894;
+}
+
+.tools #toggle-sheet.error {
+    color: #c0392b;
+}
+
+#add-business,
+#sheet-form {
+    position: absolute;
+    z-index: 2;
+    top: 6cqh;
+    right: 1cqw;
+    display: flex;
+    gap: .5cqw;
+    padding: .6cqh .6cqw;
+    background: var(--panel);
+    border: 1px solid currentColor;
+    flex-wrap: wrap;
+    max-width: 90%;
+    box-shadow: 0 2px 8px #0008;
+    border-radius: .5em;
+}
+
+#add-business[hidden],
+#sheet-form[hidden] {
+    display: none;
+}
+
+input,
+select,
+form button {
+    box-sizing: border-box;
+    font-size: clamp(10px, min(2cqw, 2.5cqh), 16px);
+    border-radius: .25em;
+}
+
+input {
+    width: 28cqw;
+}
+
+#sheet-url {
+    width: 35cqw;
+}
+
+#sheet-status {
+    flex-basis: 100%;
+}
+
+.sheet-business {
+    opacity: .8;
+}

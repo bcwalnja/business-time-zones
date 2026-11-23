@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Businesses by US Time Zone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="widget">
+    <div id="map" aria-label="Businesses by US time zone">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464 300" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <clipPath id="c"><path d="M31,12 L30,35 L24,51 L15,67 L14,83 L8,93 L10,101 L9,113 L14,125 L14,133 L17,137 L16,145 L22,157 L22,166 L30,169 L40,179 L43,179 L46,183 L48,191 L65,193 L70,198 L100,215 L123,218 L127,213 L139,214 L152,227 L156,239 L163,245 L169,247 L176,239 L185,240 L191,246 L195,256 L201,263 L205,275 L208,278 L221,283 L225,282 L223,273 L225,263 L252,244 L264,241 L273,244 L281,243 L286,248 L295,247 L297,245 L304,247 L305,244 L301,242 L301,234 L303,232 L318,233 L322,231 L330,231 L338,236 L343,236 L348,232 L353,233 L364,243 L364,253 L372,267 L380,273 L385,280 L393,279 L393,259 L384,240 L375,227 L373,217 L377,205 L388,193 L390,187 L394,183 L398,182 L403,174 L410,171 L409,165 L415,160 L415,157 L407,144 L410,142 L413,132 L412,124 L417,115 L417,106 L428,98 L429,93 L443,85 L434,79 L435,66 L447,57 L456,46 L447,37 L441,23 L430,25 L427,34 L427,44 L420,53 L397,59 L389,68 L389,77 L386,80 L370,83 L370,90 L361,99 L349,107 L342,107 L339,105 L339,101 L343,95 L340,83 L333,80 L334,75 L332,69 L325,65 L325,63 L329,62 L329,60 L327,60 L324,56 L313,54 L301,58 L295,53 L295,48 L293,48 L285,55 L277,58 L273,56 L272,53 L277,48 L283,46 L283,43 L269,43 L259,38 L250,38 L246,35 L245,31 L240,34 L189,33 L118,24 L79,16 L51,8 L47,9 L47,13 L45,15 L40,15 L34,11 Z"/></clipPath>
+        </defs>
+        <path d="M31,12 L30,35 L24,51 L15,67 L14,83 L8,93 L10,101 L9,113 L14,125 L14,133 L17,137 L16,145 L22,157 L22,166 L30,169 L40,179 L43,179 L46,183 L48,191 L65,193 L70,198 L100,215 L123,218 L127,213 L139,214 L152,227 L156,239 L163,245 L169,247 L176,239 L185,240 L191,246 L195,256 L201,263 L205,275 L208,278 L221,283 L225,282 L223,273 L225,263 L252,244 L264,241 L273,244 L281,243 L286,248 L295,247 L297,245 L304,247 L305,244 L301,242 L301,234 L303,232 L318,233 L322,231 L330,231 L338,236 L343,236 L348,232 L353,233 L364,243 L364,253 L372,267 L380,273 L385,280 L393,279 L393,259 L384,240 L375,227 L373,217 L377,205 L388,193 L390,187 L394,183 L398,182 L403,174 L410,171 L409,165 L415,160 L415,157 L407,144 L410,142 L413,132 L412,124 L417,115 L417,106 L428,98 L429,93 L443,85 L434,79 L435,66 L447,57 L456,46 L447,37 L441,23 L430,25 L427,34 L427,44 L420,53 L397,59 L389,68 L389,77 L386,80 L370,83 L370,90 L361,99 L349,107 L342,107 L339,105 L339,101 L343,95 L340,83 L333,80 L334,75 L332,69 L325,65 L325,63 L329,62 L329,60 L327,60 L324,56 L313,54 L301,58 L295,53 L295,48 L293,48 L285,55 L277,58 L273,56 L272,53 L277,48 L283,46 L283,43 L269,43 L259,38 L250,38 L246,35 L245,31 L240,34 L189,33 L118,24 L79,16 L51,8 L47,9 L47,13 L45,15 L40,15 L34,11 Z" fill="none" stroke="var(--map)" stroke-width="1" stroke-linejoin="round"/>
+        <g clip-path="url(#c)" fill="none" stroke="var(--zone)" stroke-width="1.5" stroke-dasharray="5 3">
+          <line x1="105" y1="0" x2="105" y2="300"/>
+          <line x1="190" y1="0" x2="190" y2="300"/>
+          <line x1="322" y1="0" x2="322" y2="300"/>
+        </g>
+      </svg>
+      <div class="tools">
+        <button id="toggle-form" type="button" aria-label="Show add business form" aria-expanded="false" title="Add a business">+</button>
+        <button id="toggle-sheet" type="button" aria-label="Connect a Google Sheet" aria-expanded="false" title="Connect a Google Sheet">▤</button>
+      </div>
+      <form id="add-business" hidden>
+        <input id="business-name" type="text" placeholder="Business name" aria-label="Business name" required>
+        <select id="business-zone" aria-label="US time zone">
+          <option>Pacific</option>
+          <option>Mountain</option>
+          <option>Central</option>
+          <option>Eastern</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <form id="sheet-form" hidden>
+        <input id="sheet-url" name="url" type="url" placeholder="Google Sheet link" aria-label="Google Sheet link">
+        <button type="submit">Load</button>
+        <button id="disconnect-sheet" type="button">Clear</button>
+        <output id="sheet-status" aria-live="polite"></output>
+      </form>
+      <section class="column pacific">
+        <ul data-zone="Pacific"></ul>
+      </section>
+      <section class="column mountain">
+        <ul data-zone="Mountain"></ul>
+      </section>
+      <section class="column central">
+        <ul data-zone="Central"></ul>
+      </section>
+      <section class="column eastern">
+        <ul data-zone="Eastern"></ul>
+      </section>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
