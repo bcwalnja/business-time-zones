@@ -90,26 +90,24 @@ body {
     top: 10%;
     line-height: 1.2;
     text-shadow: 0 1px 1px rgb(255 255 255 / 35%);
+    border: 1px dotted gray;
+    width: 18%;
 }
 
 .pacific {
     left: 3%;
-    width: 20%;
 }
 
 .mountain {
-    left: 23.6%;
-    width: 15.4%;
+    left: 27%;
 }
 
 .central {
-    left: 41.9%;
-    width: 24%;
+    left: 47%;
 }
 
 .eastern {
-    left: 70.5%;
-    width: 28%;
+    left: 72%;
 }
 
 .column.small {

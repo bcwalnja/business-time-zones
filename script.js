@@ -50,7 +50,7 @@ function render() {
     });
 
     [...businesses.map((business, index) => ({ ...business, index })), ...sheetBusinesses].forEach(business => {
-        const list = document.querySelector(`[data-zone="${business.zone}"]`);
+        const list = document.querySelector(`ul[data-zone="${business.zone}"]`);
         if (!list) return;
         const item = document.createElement("li");
         if (business.index === undefined) {
